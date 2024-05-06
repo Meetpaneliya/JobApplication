@@ -347,7 +347,7 @@ const dummyJobs = [
     description: "Analyze customer support data to identify trends and opportunities for improving customer satisfaction and service quality.",
     experience: "2-4 years",
     role: "Customer Support",
-    days: 6,
+    days: 9,
     salary: 55
   },
   {
