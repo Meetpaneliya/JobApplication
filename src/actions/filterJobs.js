@@ -1,4 +1,4 @@
-// actions.js
+
 export const FILTER_JOBS = 'FILTER_JOBS';
 
 export const filterJobs = (filters) => ({

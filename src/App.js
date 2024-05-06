@@ -1,4 +1,4 @@
-// App.js
+
 import React from 'react';
 import Filter from './components/Filter';
 import JobList from './components/JobList';

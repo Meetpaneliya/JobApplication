@@ -1,4 +1,3 @@
-// jobReducer.js
 import { combineReducers } from 'redux';
 import { FILTER_JOBS } from '../actions/filterJobs';
 import dummyJobs from '../dummyJobs';
@@ -12,7 +11,6 @@ const jobsReducer = (state = initialJobsState, action) => {
     case FILTER_JOBS:
       const { role, experience, location, salary, company } = action.payload;
 
-      // Filter jobs based on selected filters
       let filteredJobs = dummyJobs.filter((job) => {
         return (
           (!role || job.role.toLowerCase() === role.toLowerCase()) &&
@@ -41,11 +39,11 @@ const isExperienceInRange = (jobExperience, selectedExperience) => {
     case '4+yr':
       return jobExperience.includes('4+') || jobExperience.includes('5+') || jobExperience.includes('6+');
     default:
-      return true; // If no experience filter selected, return true for all jobs
+      return true; 
   }
 };
 
-// Helper function to check if job salary is in the selected range
+
 const isSalaryInRange = (jobSalary, selectedSalary) => {
   const [min, max] = selectedSalary.split('-');
   return jobSalary >= parseInt(min) && jobSalary <= parseInt(max);
