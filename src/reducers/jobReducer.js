@@ -1,6 +1,6 @@
 // jobReducer.js
 import { combineReducers } from 'redux';
-import { FILTER_JOBS } from '../actions/filterJobs'; // Changed import path to actions.js
+import { FILTER_JOBS } from '../actions/filterJobs';
 import dummyJobs from '../dummyJobs';
 
 const initialJobsState = {
@@ -10,15 +10,16 @@ const initialJobsState = {
 const jobsReducer = (state = initialJobsState, action) => {
   switch (action.type) {
     case FILTER_JOBS:
-      const { role, experience, location, salary } = action.payload;
+      const { role, experience, location, salary, company } = action.payload;
 
       // Filter jobs based on selected filters
       let filteredJobs = dummyJobs.filter((job) => {
         return (
           (!role || job.role.toLowerCase() === role.toLowerCase()) &&
-          (!experience || job.experience.toLowerCase().includes(experience.toLowerCase())) &&
+          (!experience || isExperienceInRange(job.experience, experience)) &&
           (!location || job.status.toLowerCase() === location.toLowerCase()) &&
-          (!salary || isSalaryInRange(job.salary, salary))
+          (!salary || isSalaryInRange(job.salary, salary)) &&
+          (!company || job.company.toLowerCase().includes(company.toLowerCase())) // Filter by company name
         );
       });
 
@@ -28,6 +29,19 @@ const jobsReducer = (state = initialJobsState, action) => {
       };
     default:
       return state;
+  }
+};
+
+const isExperienceInRange = (jobExperience, selectedExperience) => {
+  switch (selectedExperience) {
+    case '2-3yr':
+      return jobExperience.includes('2') || jobExperience.includes('3');
+    case '3+yr':
+      return jobExperience.includes('3+') || jobExperience.includes('4+') || jobExperience.includes('5+');
+    case '4+yr':
+      return jobExperience.includes('4+') || jobExperience.includes('5+') || jobExperience.includes('6+');
+    default:
+      return true; // If no experience filter selected, return true for all jobs
   }
 };
 

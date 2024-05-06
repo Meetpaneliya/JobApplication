@@ -1,13 +1,20 @@
-import React from 'react';
+import React , {useState}from 'react';
 import { useDispatch } from 'react-redux';
 import { filterJobs } from '../actions/filterJobs';
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const [company, setCompany] = useState('');
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
     dispatch(filterJobs({ [name]: value }));
+  };
+
+  const handleCompanySearch = (event) => {
+    const { value } = event.target;
+    setCompany(value);
+    dispatch(filterJobs({ company: value }));
   };
    
   return (
@@ -45,6 +52,18 @@ const Filter = () => {
           <option value="20-30LPA">20-30 LPA</option>
           <option value="40-50LPA">40-50 LPA</option>
         </select>
+      </div>
+
+      <div className="w-full">
+        <input
+          type="text"
+          id="company"
+          name="company"
+          value={company}
+          placeholder="Search by Company Name"
+          className="border border-gray-300 rounded p-2 mb-4 w-full"
+          onChange={handleCompanySearch}
+        />
       </div>
     </div>
   );
