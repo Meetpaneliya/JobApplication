@@ -10,7 +10,7 @@ const JobList = () => {
   return (
     <div>
       {jobs.map((job) => (
-        <Card key={job.id} jobs={job}/>
+        <Card key={job.id} job={job}/>
       ))}
       {jobs.length === 0 && <h2 className='text-center font-bold text-3xl mt-52'>Job Not Found</h2>}
     </div>

@@ -8,7 +8,8 @@ const dummyJobs = [
     status: "Remote",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
     experience: "2-3 years",
-    role: "Development"
+    role: "Development",
+    salary: 15
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const dummyJobs = [
     status: "On-site",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
     experience: "2-3 years",
-    role: "Development"
+    role: "Development",
+    salary: 45
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ const dummyJobs = [
     status: "Hybrid",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
     experience: "3+ years",
-    role: "Marketing"
+    role: "Marketing",
+    salary: 30
   },
   {
     id: 4,
@@ -41,7 +44,8 @@ const dummyJobs = [
     status: "Remote",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
     experience: "4+ years",
-    role: "Marketing"
+    role: "Marketing",
+    salary: 20
   },
   {
     id: 5,
@@ -52,7 +56,8 @@ const dummyJobs = [
     status: "On-site",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
     experience: "2+ years",
-    role: "Finance"
+    role: "Finance",
+    salary: 15
   }
 ];
 

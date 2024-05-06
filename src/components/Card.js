@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Card = ({ jobs }) => {
+const Card = ({ job }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const truncateDescription = (description, limit) => {
@@ -15,18 +15,19 @@ const Card = ({ jobs }) => {
     setIsExpanded(!isExpanded);
   };
 
-  const descriptionToShow = isExpanded ? jobs.description : truncateDescription(jobs.description, 6);
+  const descriptionToShow = isExpanded ? job.description : truncateDescription(job.description, 6);
 
   return (
     <div className="max-w-sm w-full sm:max-w-md bg-slate-800 shadow-md rounded-lg overflow-hidden mx-auto my-4">
       <div className="flex items-center border-b border-gray-500">
         <div>
-          <img src={jobs.image} alt='' className='rounded-full w-16 h-16 object-cover ml-3'/>
+          <img src={job.image} alt='' className='rounded-full w-16 h-16 object-cover ml-3'/>
         </div>
         <div className="p-4 flex-1">
-          <p className="text-lg font-semibold text-gray-400">{jobs.title}</p>
-          <p className="text-gray-500">Company: {jobs.company}</p>
-          <p className="text-gray-500">Location: {jobs.location}</p>
+          <p className="text-lg font-semibold text-gray-400">{job.title}</p>
+          <p className="text-gray-500">Company: {job.company}</p>
+          <p className="text-gray-500">Location: {job.location}</p>
+          <p className="text-gray-500">Salary: {job.salary} LPA</p>
         </div>
       </div>
       <div className="p-4">
@@ -38,7 +39,7 @@ const Card = ({ jobs }) => {
         )}
         {isExpanded && (
           <>
-            <p className="text-gray-500">Experience: {jobs.experience}</p>
+            <p className="text-gray-500">Experience: {job.experience}</p>
             <div className="mt-3">
               <button className="bg-slate-500 p-2 rounded-md text-sm">Apply Now</button>
             </div>
