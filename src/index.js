@@ -4,7 +4,7 @@ import "./index.css";
 import { Provider } from 'react-redux';
 import store from './reducers/store';
 import App from "./App";
-//import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -13,6 +13,7 @@ root.render(
   <div>
     <Provider store={store}>
     <App />
+      <ToastContainer/>
     </Provider>
   </div>
 

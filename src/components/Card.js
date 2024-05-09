@@ -1,6 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHourglassEnd } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
+
+function handleApply() {
+    toast.success("Apply successfully.")
+}
 
 
 const Card = ({ job }) => {
@@ -29,7 +34,7 @@ const Card = ({ job }) => {
         <div className="mt-3">
           <p className="text-gray-500"><span className='font-semibold text-lg'>About us :</span> {job.description}</p>
 
-          <button className="bg-slate-500 p-2 rounded-md text-sm mt-3">Apply Now</button>
+          <button className="bg-slate-500 p-2 rounded-md text-sm mt-3 hover:bg-slate-600 transition duration-300" onClick={handleApply}>Apply Now</button>
         </div>
 
       </div>
